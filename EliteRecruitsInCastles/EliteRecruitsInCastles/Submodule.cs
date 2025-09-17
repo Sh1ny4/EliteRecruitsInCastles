@@ -10,7 +10,7 @@ namespace EliteRecruitsInCastles
         protected override void OnSubModuleLoad()
         {
             base.OnSubModuleLoad();
-            new Harmony("wipo.patches").PatchAll();
+            new Harmony("EliteRecruitsInCastles.EliteRecruitsInCastles").PatchAll();
         }
 
         protected override void InitializeGameStarter(Game game, IGameStarter starterObject)
