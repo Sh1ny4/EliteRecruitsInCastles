@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+	<Name value="EliteRecruitsInCastles"/>
+	<Id value="EliteRecruitsInCastles"/>
+	<Version value="v1.3.0"/>
+	<SingleplayerModule value="true"/>
+	<MultiplayerModule value="false"/>
+	<ModuleType value ="Community" />
+	<DependedModules>
+		<DependedModule Id="Bannerlord.Harmony"/>
+		<DependedModule Id="Native"/>
+		<DependedModule Id="Sandbox"/>
+		<DependedModule Id="SandBoxCore"/>
+		<DependedModule Id="StoryMode"/>
+		<DependedModule Id="CustomBattle"/>
+	</DependedModules>
+	<SubModules>
+		<SubModule>
+			<Name value="EliteRecruitsInCastles" />
+			<DLLName value="EliteRecruitsInCastles.dll" />
+			<SubModuleClassType value="EliteRecruitsInCastles.Submodule" />
+			<Tags />
+		</SubModule>
+	</SubModules>
+	<Xmls>
+	</Xmls>
+</Module>
