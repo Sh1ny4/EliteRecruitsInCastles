@@ -1,5 +1,4 @@
-﻿using HarmonyLib;
-using Helpers;
+﻿using Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -689,7 +688,8 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                     LocatableSearchData<Settlement> locatableSearchData = Settlement.StartFindingLocatablesAroundPosition(mobileParty.Position.ToVec2(), num);
                     for (Settlement settlement = Settlement.FindNextLocatable(ref locatableSearchData); settlement != null; settlement = Settlement.FindNextLocatable(ref locatableSearchData))
                     {
-                        if (!settlement.IsCastle && settlement.MapFaction != mobileParty.MapFaction && this.IsSettlementSuitableForVisitingCondition(mobileParty, settlement))
+                        //if (!settlement.IsCastle && settlement.MapFaction != mobileParty.MapFaction && this.IsSettlementSuitableForVisitingCondition(mobileParty, settlement))
+                        if (settlement.MapFaction != mobileParty.MapFaction && this.IsSettlementSuitableForVisitingCondition(mobileParty, settlement))
                         {
                             MobileParty.NavigationType navigationType;
                             float num2;

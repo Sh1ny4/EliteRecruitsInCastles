@@ -1,7 +1,8 @@
 ﻿using HarmonyLib;
 using TaleWorlds.Core;
-using TaleWorlds.CampaignSystem;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.CampaignSystem;
+using EliteRecruitsInCastles.EliteRecruitsInCastles;
 
 namespace EliteRecruitsInCastles
 {
@@ -18,7 +19,8 @@ namespace EliteRecruitsInCastles
             if (starterObject is CampaignGameStarter)
             {
                 CampaignGameStarter campaignGameStarter = starterObject as CampaignGameStarter;
-                campaignGameStarter.AddBehavior(new EliteRecruitsInCastles.CastleRecruitMenu());
+                campaignGameStarter.AddBehavior(new CastleRecruitMenu());
+                campaignGameStarter.AddBehavior(new AiVisitSettlementBehaviorPatch());
             }
         }
     }

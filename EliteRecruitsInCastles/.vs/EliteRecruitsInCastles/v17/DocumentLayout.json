@@ -3,16 +3,38 @@
   "WorkspaceRootPath": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|c:\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\eliterecruitsincastles\\eliterecruitsincastles\\eliterecruitsincastles\\submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|c:\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\eliterecruitsincastles\\eliterecruitsincastles\\eliterecruitsincastles\\eliterecruitsincastles\\aivisitsettlementbehaviorpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\eliterecruitsincastles\\eliterecruitsincastles\\aivisitsettlementbehaviorpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\eliterecruitsincastles\\aivisitsettlementbehaviorpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\Main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EliteRecruitsInCastles\\Main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\eliterecruitsincastles\\submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|EliteRecruitsInCastles||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\eliterecruitsincastles\\eliterecruitsincastles\\updatevolunteersofnotablesinsettlementpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\eliterecruitsincastles\\updatevolunteersofnotablesinsettlementpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\eliterecruitsincastles\\eliterecruitsincastles\\spawnnotablesatgamestartpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\eliterecruitsincastles\\spawnnotablesatgamestartpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\eliterecruitsincastles\\eliterecruitsincastles\\gettargetnotablecountforsettlementpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\eliterecruitsincastles\\gettargetnotablecountforsettlementpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\eliterecruitsincastles\\eliterecruitsincastles\\castlerecruitmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\eliterecruitsincastles\\castlerecruitmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\eliterecruitsincastles\\eliterecruitsincastles\\getbasicvolunteerpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|solutionrelative:eliterecruitsincastles\\eliterecruitsincastles\\getbasicvolunteerpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2E5FCDE-289A-423A-A4AC-0557B8882043}|EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj|c:\\steam\\steamapps\\common\\mount \u0026 blade ii bannerlord\\modules\\eliterecruitsincastles\\eliterecruitsincastles\\eliterecruitsincastles\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|6185191f-1008-4fb2-a715-3a4e4f27e610"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +44,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,40 +52,101 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AiVisitSettlementBehaviorPatch.cs",
-              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
-              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
-              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
-              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T17:23:28.979Z",
+              "DocumentIndex": 2,
+              "Title": "EliteRecruitsInCastles",
+              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj",
+              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj",
+              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj",
+              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-18T14:49:08.624Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Submodule.cs",
               "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\Submodule.cs",
               "RelativeDocumentMoniker": "EliteRecruitsInCastles\\Submodule.cs",
               "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\Submodule.cs",
               "RelativeToolTip": "EliteRecruitsInCastles\\Submodule.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-17T17:23:01.264Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Main.cs",
-              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\Main.cs",
-              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\Main.cs",
-              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\Main.cs",
-              "RelativeToolTip": "EliteRecruitsInCastles\\Main.cs",
+              "DocumentIndex": 0,
+              "Title": "AiVisitSettlementBehaviorPatch.cs",
+              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
+              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
+              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
+              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\AiVisitSettlementBehaviorPatch.cs",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAIwMQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T14:36:29.34Z"
+              "WhenOpened": "2025-09-18T14:39:25.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CastleRecruitMenu.cs",
+              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\CastleRecruitMenu.cs",
+              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\CastleRecruitMenu.cs",
+              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\CastleRecruitMenu.cs",
+              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\CastleRecruitMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:34:56.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetBasicVolunteerPatch.cs",
+              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetBasicVolunteerPatch.cs",
+              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetBasicVolunteerPatch.cs",
+              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetBasicVolunteerPatch.cs",
+              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetBasicVolunteerPatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:31:38.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetTargetNotableCountForSettlementPatch.cs",
+              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetTargetNotableCountForSettlementPatch.cs",
+              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetTargetNotableCountForSettlementPatch.cs",
+              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetTargetNotableCountForSettlementPatch.cs",
+              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\GetTargetNotableCountForSettlementPatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:34:59.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpawnNotablesAtGameStartPatch.cs",
+              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\SpawnNotablesAtGameStartPatch.cs",
+              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\SpawnNotablesAtGameStartPatch.cs",
+              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\SpawnNotablesAtGameStartPatch.cs",
+              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\SpawnNotablesAtGameStartPatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:35:04.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UpdateVolunteersOfNotablesInSettlementPatch.cs",
+              "DocumentMoniker": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\UpdateVolunteersOfNotablesInSettlementPatch.cs",
+              "RelativeDocumentMoniker": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\UpdateVolunteersOfNotablesInSettlementPatch.cs",
+              "ToolTip": "C:\\Steam\\steamapps\\common\\Mount \u0026 Blade II Bannerlord\\Modules\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\EliteRecruitsInCastles\\UpdateVolunteersOfNotablesInSettlementPatch.cs",
+              "RelativeToolTip": "EliteRecruitsInCastles\\EliteRecruitsInCastles\\UpdateVolunteersOfNotablesInSettlementPatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T14:35:06.538Z"
             }
           ]
         }
