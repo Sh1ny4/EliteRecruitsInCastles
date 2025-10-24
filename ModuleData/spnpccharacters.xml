@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NPCCharacters>
+    <NPCCharacter id="aserai_town_recruit"
+        default_group="Infantry"
+        level="6"
+        name="Aserai Town Recruit"
+        is_basic_troop="true"
+        occupation="Soldier"
+        culture="Culture.aserai">
+        <face>
+            <face_key_template value="BodyProperty.fighter_aserai"/>
+        </face>
+        <skills >
+            <skill id="Athletics" value="20"/>
+            <skill id="Riding" value="5"/>
+            <skill id="OneHanded" value="20"/>
+            <skill id="TwoHanded" value="10"/>
+            <skill id="Polearm" value="20"/>
+            <skill id="Bow" value="10"/>
+            <skill id="Crossbow" value="0"/>
+            <skill id="Throwing" value="5"/>
+        </skills>
+        <upgrade_targets>
+        </upgrade_targets>
+        <Equipments>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.aserai_sword_2_t2"/>
+                <equipment slot="Head" id="Item.aserai_civil_e_hscarf"/>
+                <equipment slot="Body" id="Item.aserai_civil_e"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_hammer_1_t1"/>
+                <equipment slot="Head" id="Item.aserai_civil_c_head"/>
+                <equipment slot="Body" id="Item.aserai_civil_c"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_hammer_2_t1"/>
+                <equipment slot="Head" id="Item.aserai_civil_e_hscarf"/>
+                <equipment slot="Body" id="Item.aserai_civil_e"/>
+                <equipment slot="Gloves" id="Item.buttoned_leather_bracers"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_hatchet_1_t1"/>
+                <equipment slot="Head" id="Item.aserai_civil_c_head"/>
+                <equipment slot="Body" id="Item.aserai_civil_e"/>
+                <equipment slot="Gloves" id="Item.buttoned_leather_bracers"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster civilian="true">
+                <equipment slot="Item0" id="Item.peasant_2haxe_1_t1"/>
+                <equipment slot="Item2" id="Item.throwing_stone"/>
+                <equipment slot="Body" id="Item.bandit_envelope_dress_v1"/>
+                <equipment slot="Leg" id="Item.wrapped_shoes"/>
+            </EquipmentRoster>
+        </Equipments>
+    </NPCCharacter>
+
+    <NPCCharacter id="battania_town_recruit"
+        default_group="Infantry"
+        level="6"
+        name="Battanian Town Recruit"
+        is_basic_troop="true"
+        occupation="Soldier"
+        culture="Culture.battania">
+        <face>
+            <face_key_template value="BodyProperty.fighter_battania"/>
+        </face>
+        <skills >
+            <skill id="Athletics" value="20"/>
+            <skill id="Riding" value="5"/>
+            <skill id="OneHanded" value="20"/>
+            <skill id="TwoHanded" value="10"/>
+            <skill id="Polearm" value="20"/>
+            <skill id="Bow" value="5"/>
+            <skill id="Crossbow" value="0"/>
+            <skill id="Throwing" value="10"/>
+        </skills>
+        <upgrade_targets>
+        </upgrade_targets>
+        <Equipments>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_maul_t1_2"/>
+                <equipment slot="Cape" id="Item.battania_civil_cloak"/>
+                <equipment slot="Body" id="Item.battania_civil_a"/>
+                <equipment slot="Leg" id="Item.rough_tied_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_hatchet_1_t1"/>
+                <equipment slot="Cape" id="Item.battania_cloak_furr"/>
+                <equipment slot="Body" id="Item.battania_civil_a"/>
+                <equipment slot="Gloves" id="Item.buttoned_leather_bracers"/>
+                <equipment slot="Leg" id="Item.rough_tied_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.battania_mace_2_t2"/>
+                <equipment slot="Cape" id="Item.battania_civil_cloak"/>
+                <equipment slot="Body" id="Item.battania_civil_b"/>
+                <equipment slot="Gloves" id="Item.buttoned_leather_bracers"/>
+                <equipment slot="Leg" id="Item.rough_tied_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_pickaxe_1_t1"/>
+                <equipment slot="Cape" id="Item.battania_civil_cloak"/>
+                <equipment slot="Body" id="Item.battania_civil_b"/>
+                <equipment slot="Gloves" id="Item.buttoned_leather_bracers"/>
+                <equipment slot="Leg" id="Item.rough_tied_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster civilian="true">
+                <equipment slot="Item0" id="Item.peasant_2haxe_1_t1"/>
+                <equipment slot="Item2" id="Item.throwing_stone"/>
+                <equipment slot="Body" id="Item.bandit_envelope_dress_v1"/>
+                <equipment slot="Leg" id="Item.wrapped_shoes"/>
+            </EquipmentRoster>
+        </Equipments>
+    </NPCCharacter>
+
+    <NPCCharacter id="empire_town_recruit"
+        default_group="Infantry"
+        level="6"
+        name="Imperial Town Recruit"
+        is_basic_troop="true"
+        occupation="Soldier"
+        culture="Culture.empire">
+        <face>
+            <face_key_template value="BodyProperty.fighter_empire"/>
+        </face>
+        <skills >
+            <skill id="Athletics" value="20"/>
+            <skill id="Riding" value="0"/>
+            <skill id="OneHanded" value="20"/>
+            <skill id="TwoHanded" value="10"/>
+            <skill id="Polearm" value="20"/>
+            <skill id="Bow" value="5"/>
+            <skill id="Crossbow" value="5"/>
+            <skill id="Throwing" value="10"/>
+        </skills>
+        <upgrade_targets>
+        </upgrade_targets>
+        <Equipments>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_pitchfork_2_t1"/>
+                <equipment slot="Head" id="Item.leather_cap"/>
+                <equipment slot="Body" id="Item.tunic_with_shoulder_pads"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_polearm_1_t1"/>
+                <equipment slot="Head" id="Item.merchants_hat"/>
+                <equipment slot="Body" id="Item.footmans_tunic"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_sickle_1_t1"/>
+                <equipment slot="Body" id="Item.tied_cloth_tunic"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.empire_sword_1_t2"/>
+                <equipment slot="Body" id="Item.tied_cloth_tunic"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster civilian="true">
+                <equipment slot="Item0" id="Item.peasant_2haxe_1_t1"/>
+                <equipment slot="Item2" id="Item.throwing_stone"/>
+                <equipment slot="Body" id="Item.bandit_envelope_dress_v1"/>
+                <equipment slot="Leg" id="Item.wrapped_shoes"/>
+            </EquipmentRoster>
+        </Equipments>
+    </NPCCharacter>
+
+    <NPCCharacter id="khuzait_town_recruit"
+        default_group="Infantry"
+        level="6"
+        name="Khuzait Town Recruit"
+        is_basic_troop="true"
+        occupation="Soldier"
+        culture="Culture.khuzait">
+        <face>
+            <face_key_template value="BodyProperty.fighter_khuzait"/>
+        </face>
+        <skills >
+            <skill id="Athletics" value="20"/>
+            <skill id="Riding" value="10"/>
+            <skill id="OneHanded" value="20"/>
+            <skill id="TwoHanded" value="5"/>
+            <skill id="Polearm" value="20"/>
+            <skill id="Bow" value="5"/>
+            <skill id="Crossbow" value="5"/>
+            <skill id="Throwing" value="5"/>
+        </skills>
+        <upgrade_targets>
+        </upgrade_targets>
+        <Equipments>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.khuzait_mace_1_t2"/>
+                <equipment slot="Head" id="Item.nomad_padded_hood"/>
+                <equipment slot="Body" id="Item.khuzait_civil_coat_b"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_pitchfork_1_t1"/>
+                <equipment slot="Body" id="Item.khuzait_civil_coat_b"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_polearm_1_t1"/>
+                <equipment slot="Head" id="Item.roughhide_cap"/>
+                <equipment slot="Body" id="Item.steppe_armor"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_sickle_1_t1"/>
+                <equipment slot="Head" id="Item.roughhide_cap"/>
+                <equipment slot="Body" id="Item.steppe_armor"/>
+                <equipment slot="Leg" id="Item.eastern_leather_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster civilian="true">
+                <equipment slot="Item0" id="Item.peasant_2haxe_1_t1"/>
+                <equipment slot="Item2" id="Item.throwing_stone"/>
+                <equipment slot="Body" id="Item.bandit_envelope_dress_v1"/>
+                <equipment slot="Leg" id="Item.wrapped_shoes"/>
+            </EquipmentRoster>
+        </Equipments>
+    </NPCCharacter>
+
+    <NPCCharacter id="sturgia_town_recruit"
+        default_group="Infantry"
+        level="6"
+        name="Sturgian Town Recruit"
+        is_basic_troop="true"
+        occupation="Soldier"
+        culture="Culture.sturgia">
+        <face>
+            <face_key_template value="BodyProperty.fighter_sturgia"/>
+        </face>
+        <skills >
+            <skill id="Athletics" value="20"/>
+            <skill id="Riding" value="5"/>
+            <skill id="OneHanded" value="20"/>
+            <skill id="TwoHanded" value="10"/>
+            <skill id="Polearm" value="20"/>
+            <skill id="Bow" value="5"/>
+            <skill id="Crossbow" value="0"/>
+            <skill id="Throwing" value="10"/>
+        </skills>
+        <upgrade_targets>
+        </upgrade_targets>
+        <Equipments>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.sturgia_axe_2_t2"/>
+                <equipment slot="Body" id="Item.tundra_tunic"/>
+                <equipment slot="Leg" id="Item.highland_leg_wrappings"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_hammer_1_t1"/>
+                <equipment slot="Cape" id="Item.scarf"/>
+                <equipment slot="Body" id="Item.tundra_tunic"/>
+                <equipment slot="Gloves" id="Item.ragged_armwraps"/>
+                <equipment slot="Leg" id="Item.highland_leg_wrappings"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_hammer_2_t1"/>
+                <equipment slot="Body" id="Item.tundra_tunic"/>
+                <equipment slot="Leg" id="Item.highland_leg_wrappings"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_sickle_1_t1"/>
+                <equipment slot="Body" id="Item.tundra_tunic"/>
+                <equipment slot="Leg" id="Item.highland_leg_wrappings"/>
+            </EquipmentRoster>
+            <EquipmentRoster civilian="true">
+                <equipment slot="Item0" id="Item.peasant_2haxe_1_t1"/>
+                <equipment slot="Item2" id="Item.throwing_stone"/>
+                <equipment slot="Body" id="Item.bandit_envelope_dress_v1"/>
+                <equipment slot="Leg" id="Item.wrapped_shoes"/>
+            </EquipmentRoster>
+        </Equipments>
+    </NPCCharacter>
+
+    <NPCCharacter id="vlandia_town_recruit"
+        default_group="Infantry"
+        level="6"
+        name="Vlandian Town Recruit"
+        is_basic_troop="true"
+        occupation="Soldier"
+        culture="Culture.vlandia">
+        <face>
+            <face_key_template value="BodyProperty.fighter_vlandia"/>
+        </face>
+        <skills >
+            <skill id="Athletics" value="20"/>
+            <skill id="Riding" value="5"/>
+            <skill id="OneHanded" value="20"/>
+            <skill id="TwoHanded" value="10"/>
+            <skill id="Polearm" value="20"/>
+            <skill id="Bow" value="5"/>
+            <skill id="Crossbow" value="5"/>
+            <skill id="Throwing" value="5"/>
+        </skills>
+        <upgrade_targets>
+        </upgrade_targets>
+        <Equipments>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.vlandia_mace_1_t2"/>
+                <equipment slot="Head" id="Item.leather_cap"/>
+                <equipment slot="Body" id="Item.bandit_leather_water_flask"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_pitchfork_1_t1"/>
+                <equipment slot="Head" id="Item.padded_cap"/>
+                <equipment slot="Cape" id="Item.scarf"/>
+                <equipment slot="Body" id="Item.bandit_leather_water_flask"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_hammer_1_t1"/>
+                <equipment slot="Head" id="Item.leather_cap"/>
+                <equipment slot="Cape" id="Item.hood"/>
+                <equipment slot="Body" id="Item.sackcloth_tunic"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster>
+                <equipment slot="Item0" id="Item.peasant_pickaxe_1_t1"/>
+                <equipment slot="Head" id="Item.padded_cap"/>
+                <equipment slot="Cape" id="Item.hood"/>
+                <equipment slot="Body" id="Item.sackcloth_tunic"/>
+                <equipment slot="Leg" id="Item.empire_horseman_boots"/>
+            </EquipmentRoster>
+            <EquipmentRoster civilian="true">
+                <equipment slot="Item0" id="Item.peasant_2haxe_1_t1"/>
+                <equipment slot="Item2" id="Item.throwing_stone"/>
+                <equipment slot="Body" id="Item.bandit_envelope_dress_v1"/>
+                <equipment slot="Leg" id="Item.wrapped_shoes"/>
+            </EquipmentRoster>
+        </Equipments>
+    </NPCCharacter>
+</NPCCharacters>
