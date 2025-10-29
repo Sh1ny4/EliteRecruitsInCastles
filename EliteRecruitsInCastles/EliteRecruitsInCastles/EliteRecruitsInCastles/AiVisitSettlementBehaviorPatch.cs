@@ -24,16 +24,42 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
             CampaignEvents.AiHourlyTickEvent.AddNonSerializedListener(this, new Action<MobileParty, PartyThinkParams>(this.AiHourlyTick));
             CampaignEvents.OnSessionLaunchedEvent.AddNonSerializedListener(this, new Action<CampaignGameStarter>(this.OnSessionLaunched));
         }
-
+        private static float GetMaximumDistanceAsDays(MobileParty.NavigationType navigationType)
+        {
+            return Campaign.Current.GetAverageDistanceBetweenClosestTwoTownsWithNavigationType(navigationType) * 4f / (Campaign.Current.EstimatedAverageLordPartySpeed * (float)CampaignTime.HoursInDay);
+        }
+        private float MaximumMeaningfulDistanceAsDays(MobileParty.NavigationType navigationType)
+        {
+            return GetMaximumDistanceAsDays(navigationType) * 0.7f;
+        }
+        private static float SearchForNeutralSettlementRadiusAsDays
+        {
+            get
+            {
+                return 0.5f;
+            }
+        }
+        private float NumberOfHoursAtDay
+        {
+            get
+            {
+                return (float)Campaign.Current.Models.CampaignTimeModel.HoursInDay;
+            }
+        }
+        private float IdealTimePeriodForVisitingOwnedSettlement
+        {
+            get
+            {
+                return (float)Campaign.Current.Models.CampaignTimeModel.HoursInDay * 15f;
+            }
+        }
         private void OnSessionLaunched(CampaignGameStarter campaignGameStarter)
         {
             this._disbandPartyCampaignBehavior = Campaign.Current.GetCampaignBehavior<IDisbandPartyCampaignBehavior>();
         }
-
         public override void SyncData(IDataStore dataStore)
         {
         }
-
         private void AiHourlyTick(MobileParty mobileParty, PartyThinkParams p)
         {
             Settlement currentSettlement = mobileParty.CurrentSettlement;
@@ -87,7 +113,8 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                         num7 += mobileParty3.Party.PrisonerSizeLimit;
                     }
                 }
-                SortedList<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>> sortedList = this.FindSettlementsToVisitWithDistancesAsDays(mobileParty);
+                this._settlementsWithDistances.Clear();
+                FillSettlementsToVisitWithDistancesAsDays(mobileParty, this._settlementsWithDistances);
                 float num8 = PartyBaseHelper.FindPartySizeNormalLimit(mobileParty);
                 float num9 = 2000f;
                 float num10 = 2000f;
@@ -98,7 +125,7 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                 }
                 float num11 = 0.2f;
                 float num12 = 1f;
-                foreach (KeyValuePair<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>> keyValuePair in sortedList)
+                foreach (KeyValuePair<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>> keyValuePair in this._settlementsWithDistances)
                 {
                     Settlement item5 = keyValuePair.Value.Item1;
                     MobileParty.NavigationType item6 = keyValuePair.Value.Item2;
@@ -108,12 +135,12 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                     float num13 = 1.6f;
                     if (mobileParty.IsDisbanding)
                     {
-                        goto IL_2E2;
+                        goto IL_2F4;
                     }
                     IDisbandPartyCampaignBehavior disbandPartyCampaignBehavior = this._disbandPartyCampaignBehavior;
                     if (disbandPartyCampaignBehavior != null && disbandPartyCampaignBehavior.IsPartyWaitingForDisband(mobileParty))
                     {
-                        goto IL_2E2;
+                        goto IL_2F4;
                     }
                     if (leaderHero == null)
                     {
@@ -166,11 +193,11 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                         float num21 = Math.Max(0f, num3) / num4;
                         if (num4 > 0f && (mobileParty.BesiegedSettlement == null || num21 <= 1f) && num5 > 100 && (item5.IsTown || (item5.IsVillage && mobileParty.Army == null)))
                         {
-                            float neededFoodsInDaysThresholdForMilitaryAction = Campaign.Current.Models.MobilePartyAIModel.NeededFoodsInDaysThresholdForMilitaryAction;
-                            if (num21 < neededFoodsInDaysThresholdForMilitaryAction)
+                            float neededFoodsInDaysThresholdForSiege = Campaign.Current.Models.MobilePartyAIModel.NeededFoodsInDaysThresholdForSiege;
+                            if (num21 < neededFoodsInDaysThresholdForSiege)
                             {
                                 float num22 = (float)((int)(num4 * ((num21 < 1f && item5.IsVillage) ? Campaign.Current.Models.PartyFoodBuyingModel.MinimumDaysFoodToLastWhileBuyingFoodFromVillage : Campaign.Current.Models.PartyFoodBuyingModel.MinimumDaysFoodToLastWhileBuyingFoodFromTown)) + 1);
-                                float num23 = neededFoodsInDaysThresholdForMilitaryAction * 0.5f;
+                                float num23 = neededFoodsInDaysThresholdForSiege * 0.5f;
                                 float num24 = num23 - Math.Min(num23, Math.Max(0f, num21 - 1f));
                                 float num25 = num22 + 20f * (float)(item5.IsTown ? 2 : 1) * ((num14 > num12) ? 1f : (num14 / num12));
                                 int val = (int)((float)(num5 - 100) / Campaign.Current.Models.PartyFoodBuyingModel.LowCostFoodPriceAverage);
@@ -179,8 +206,7 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                         }
                         float num26 = 0f;
                         float num27 = 1f;
-                        // if (item < 1f && mobileParty.GetAvailableWageBudget() > 0 && !item5.IsCastle)
-                        if (item < 1f && mobileParty.GetAvailableWageBudget() > 0)
+                        if (!item5.IsCastle && item < 1f && mobileParty.GetAvailableWageBudget() > 0)
                         {
                             int num28 = item5.NumberOfLordPartiesAt;
                             int num29 = item5.NumberOfLordPartiesTargeting;
@@ -312,67 +338,20 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                         }
                         num13 *= num45 * num19 * num37 * num39 * num38 * num41 * num43 * num42 * num44 * num40 * num46;
                     }
-                IL_C02:
+                IL_C14:
                     if (num13 > 0.025f)
                     {
                         this.AddBehaviorTupleWithScore(p, item5, num13, item6, item8, item9);
                         continue;
                     }
                     continue;
-                IL_2E2:
+                IL_2F4:
                     float visitingNearbySettlementScore2 = this.CalculateMergeScoreForDisbandingParty(mobileParty, item5, item7);
                     this.AddBehaviorTupleWithScore(p, item5, visitingNearbySettlementScore2, item6, item8, item9);
-                    goto IL_C02;
-                }
-                if (sortedList.Count == 0 && mobileParty.MapFaction.FactionMidSettlement != null)
-                {
-                    MobileParty.NavigationType navigationType;
-                    float num48;
-                    bool isFromPort;
-                    bool isTargetingPortBetter;
-                    this.GetBestNavigationDataForVisitingSettlement(mobileParty, mobileParty.MapFaction.FactionMidSettlement, out navigationType, out num48, out isFromPort, out isTargetingPortBetter);
-                    if (navigationType != MobileParty.NavigationType.None)
-                    {
-                        this.AddBehaviorTupleWithScore(p, mobileParty.MapFaction.FactionMidSettlement, 0.025f, navigationType, isFromPort, isTargetingPortBetter);
-                    }
+                    goto IL_C14;
                 }
             }
         }
-
-        private float GetMaximumDistanceAsDays(MobileParty.NavigationType navigationType)
-        {
-			return Campaign.Current.GetAverageDistanceBetweenClosestTwoTownsWithNavigationType(navigationType)* 4f / (Campaign.Current.EstimatedAverageLordPartySpeed* (float) CampaignTime.HoursInDay);
-		}
-
-		private float MaximumMeaningfulDistanceAsDays(MobileParty.NavigationType navigationType)
-        {
-            return this.GetMaximumDistanceAsDays(navigationType) * 0.7f;
-        }
-
-        private float SearchForNeutralSettlementRadiusAsDays
-        {
-            get
-            {
-                return 0.5f;
-            }
-        }
-
-        private float NumberOfHoursAtDay
-        {
-            get
-            {
-                return (float)Campaign.Current.Models.CampaignTimeModel.HoursInDay;
-            }
-        }
-
-        private float IdealTimePeriodForVisitingOwnedSettlement
-        {
-            get
-            {
-                return (float)Campaign.Current.Models.CampaignTimeModel.HoursInDay * 15f;
-            }
-        }
-
         private ValueTuple<int, float> GetApproximateVolunteersCanBeRecruitedDataFromSettlement(Hero hero, Settlement settlement)
         {
             int num = 4;
@@ -402,7 +381,6 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
             }
             return new ValueTuple<int, float>(num2, (float)num3);
         }
-
         private float CalculateSellItemScore(MobileParty mobileParty)
         {
             float num = 0f;
@@ -428,7 +406,6 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
             }
             return num5;
         }
-
         private ValueTuple<float, float, int, int> CalculatePartyParameters(MobileParty mobileParty)
         {
             float num = 0f;
@@ -459,7 +436,6 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
             }
             return new ValueTuple<float, float, int, int>(item, num, num2, num3);
         }
-
         private void CalculateVisitHideoutScoresForBanditParty(MobileParty mobileParty, Settlement currentSettlement, PartyThinkParams p)
         {
             if (!mobileParty.MapFaction.Culture.CanHaveSettlement)
@@ -535,7 +511,6 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
                 }
             }
         }
-
         private ValueTuple<float, float, float, float> CalculateBeingSettlementOwnerScores(MobileParty mobileParty, Settlement settlement, Settlement currentSettlement, float idealGarrisonStrengthPerWalledCenter, float distanceScorePure, float averagePartySizeRatioToMaximumSize)
         {
             float num = 1f;
@@ -677,72 +652,113 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
             canMerge = true;
             return num2 * num4 * num5 * num6;
         }
-        private SortedList<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>> FindSettlementsToVisitWithDistancesAsDays(MobileParty mobileParty)
+        private static void FillSettlementsToVisitWithDistancesAsDays(MobileParty mobileParty, SortedDictionary<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>> listToFill)
         {
-            SortedList<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>> sortedList = new SortedList<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>>();
-            float num = this.SearchForNeutralSettlementRadiusAsDays * Campaign.Current.EstimatedAverageLordPartySpeed * (float)CampaignTime.HoursInDay * 0.5f;
+            float num = SearchForNeutralSettlementRadiusAsDays * Campaign.Current.EstimatedAverageLordPartySpeed * (float)CampaignTime.HoursInDay;
             if (mobileParty.LeaderHero != null && mobileParty.LeaderHero.MapFaction.IsKingdomFaction)
             {
-                if (mobileParty.Army == null || mobileParty.Army.LeaderParty == mobileParty)
+                List<Settlement> settlements = mobileParty.MapFaction.Settlements;
+                float num2 = 0f;
+                foreach (Settlement settlement in settlements)
+                {
+                    if (IsSettlementSuitableForVisitingCondition(mobileParty, settlement))
+                    {
+                        MobileParty.NavigationType navigationType;
+                        float num3;
+                        bool item;
+                        bool item2;
+                        GetBestNavigationDataForVisitingSettlement(mobileParty, settlement, out navigationType, out num3, out item, out item2);
+                        if (navigationType != MobileParty.NavigationType.None && num3 < GetMaximumDistanceAsDays(navigationType))
+                        {
+                            num2 += num3;
+                            listToFill.Add(new ValueTuple<float, int>(num3, settlement.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(settlement, navigationType, item, item2));
+                        }
+                    }
+                }
+                num2 /= (float)listToFill.Count;
+                if (num2 > GetMaximumDistanceAsDays(mobileParty.NavigationCapability) * 0.7f && (mobileParty.Army == null || mobileParty.Army.LeaderParty == mobileParty))
                 {
                     LocatableSearchData<Settlement> locatableSearchData = Settlement.StartFindingLocatablesAroundPosition(mobileParty.Position.ToVec2(), num);
-                    for (Settlement settlement = Settlement.FindNextLocatable(ref locatableSearchData); settlement != null; settlement = Settlement.FindNextLocatable(ref locatableSearchData))
+                    for (Settlement settlement2 = Settlement.FindNextLocatable(ref locatableSearchData); settlement2 != null; settlement2 = Settlement.FindNextLocatable(ref locatableSearchData))
                     {
-                        //if (!settlement.IsCastle && settlement.MapFaction != mobileParty.MapFaction && this.IsSettlementSuitableForVisitingCondition(mobileParty, settlement))
-                        if (settlement.MapFaction != mobileParty.MapFaction && this.IsSettlementSuitableForVisitingCondition(mobileParty, settlement))
-                        {
-                            MobileParty.NavigationType navigationType;
-                            float num2;
-                            bool item;
-                            bool item2;
-                            this.GetBestNavigationDataForVisitingSettlement(mobileParty, settlement, out navigationType, out num2, out item, out item2);
-                            if (navigationType != MobileParty.NavigationType.None && num2 < this.GetMaximumDistanceAsDays(navigationType))
-                            {
-                                sortedList.Add(new ValueTuple<float, int>(num2, settlement.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(settlement, navigationType, item, item2));
-                            }
-                        }
-                    }
-                }
-                using (List<Settlement>.Enumerator enumerator = mobileParty.MapFaction.Settlements.GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        Settlement settlement2 = enumerator.Current;
-                        if (this.IsSettlementSuitableForVisitingCondition(mobileParty, settlement2))
+                        if (!settlement2.IsCastle && settlement2.MapFaction != mobileParty.MapFaction && IsSettlementSuitableForVisitingCondition(mobileParty, settlement2))
                         {
                             MobileParty.NavigationType navigationType2;
-                            float num3;
+                            float num4;
                             bool item3;
                             bool item4;
-                            this.GetBestNavigationDataForVisitingSettlement(mobileParty, settlement2, out navigationType2, out num3, out item3, out item4);
-                            if (navigationType2 != MobileParty.NavigationType.None && num3 < this.GetMaximumDistanceAsDays(navigationType2))
+                            GetBestNavigationDataForVisitingSettlement(mobileParty, settlement2, out navigationType2, out num4, out item3, out item4);
+                            if (navigationType2 != MobileParty.NavigationType.None && num4 < GetMaximumDistanceAsDays(navigationType2))
                             {
-                                sortedList.Add(new ValueTuple<float, int>(num3, settlement2.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(settlement2, navigationType2, item3, item4));
+                                listToFill.Add(new ValueTuple<float, int>(num4, settlement2.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(settlement2, navigationType2, item3, item4));
                             }
                         }
                     }
-                    return sortedList;
                 }
             }
-            LocatableSearchData<Settlement> locatableSearchData2 = Settlement.StartFindingLocatablesAroundPosition(mobileParty.Position.ToVec2(), num * 1.6f);
-            for (Settlement settlement3 = Settlement.FindNextLocatable(ref locatableSearchData2); settlement3 != null; settlement3 = Settlement.FindNextLocatable(ref locatableSearchData2))
+            else
             {
-                if (this.IsSettlementSuitableForVisitingCondition(mobileParty, settlement3))
+                LocatableSearchData<Settlement> locatableSearchData2 = Settlement.StartFindingLocatablesAroundPosition(mobileParty.Position.ToVec2(), num * 1.6f);
+                for (Settlement settlement3 = Settlement.FindNextLocatable(ref locatableSearchData2); settlement3 != null; settlement3 = Settlement.FindNextLocatable(ref locatableSearchData2))
                 {
-                    MobileParty.NavigationType navigationType3;
-                    float num4;
-                    bool item5;
-                    bool item6;
-                    this.GetBestNavigationDataForVisitingSettlement(mobileParty, settlement3, out navigationType3, out num4, out item5, out item6);
-                    if (navigationType3 != MobileParty.NavigationType.None && num4 < this.GetMaximumDistanceAsDays(navigationType3))
+                    if (IsSettlementSuitableForVisitingCondition(mobileParty, settlement3))
                     {
-                        sortedList.Add(new ValueTuple<float, int>(num4, settlement3.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(settlement3, navigationType3, item5, item6));
+                        MobileParty.NavigationType navigationType3;
+                        float num5;
+                        bool item5;
+                        bool item6;
+                        GetBestNavigationDataForVisitingSettlement(mobileParty, settlement3, out navigationType3, out num5, out item5, out item6);
+                        if (navigationType3 != MobileParty.NavigationType.None && num5 < GetMaximumDistanceAsDays(navigationType3))
+                        {
+                            listToFill.Add(new ValueTuple<float, int>(num5, settlement3.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(settlement3, navigationType3, item5, item6));
+                        }
                     }
                 }
             }
-            return sortedList;
+            if (!listToFill.AnyQ<KeyValuePair<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>>>())
+            {
+                Settlement factionMidSettlement = mobileParty.MapFaction.FactionMidSettlement;
+                if (factionMidSettlement != null)
+                {
+                    if (factionMidSettlement.IsFortification)
+                    {
+                        using (List<Village>.Enumerator enumerator2 = factionMidSettlement.BoundVillages.GetEnumerator())
+                        {
+                            while (enumerator2.MoveNext())
+                            {
+                                Village village = enumerator2.Current;
+                                if (IsSettlementSuitableForVisitingCondition(mobileParty, village.Settlement))
+                                {
+                                    MobileParty.NavigationType navigationType4;
+                                    float item7;
+                                    bool item8;
+                                    bool item9;
+                                    GetBestNavigationDataForVisitingSettlement(mobileParty, village.Settlement, out navigationType4, out item7, out item8, out item9);
+                                    if (navigationType4 != MobileParty.NavigationType.None)
+                                    {
+                                        listToFill.Add(new ValueTuple<float, int>(item7, village.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(village.Settlement, navigationType4, item8, item9));
+                                    }
+                                }
+                            }
+                            return;
+                        }
+                    }
+                    if (IsSettlementSuitableForVisitingCondition(mobileParty, factionMidSettlement))
+                    {
+                        MobileParty.NavigationType navigationType5;
+                        float item10;
+                        bool item11;
+                        bool item12;
+                        GetBestNavigationDataForVisitingSettlement(mobileParty, factionMidSettlement, out navigationType5, out item10, out item11, out item12);
+                        if (navigationType5 != MobileParty.NavigationType.None)
+                        {
+                            listToFill.Add(new ValueTuple<float, int>(item10, factionMidSettlement.GetHashCode()), new ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>(factionMidSettlement, navigationType5, item11, item12));
+                        }
+                    }
+                }
+            }
         }
-        private void GetBestNavigationDataForVisitingSettlement(MobileParty mobileParty, Settlement settlement, out MobileParty.NavigationType bestNavigationType, out float distanceAsDays, out bool isFromPort, out bool isTargetingPortBetter)
+        private static void GetBestNavigationDataForVisitingSettlement(MobileParty mobileParty, Settlement settlement, out MobileParty.NavigationType bestNavigationType, out float distanceAsDays, out bool isFromPort, out bool isTargetingPortBetter)
         {
             bestNavigationType = MobileParty.NavigationType.None;
             float num = float.MaxValue;
@@ -774,7 +790,6 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
             }
             distanceAsDays = num / (Campaign.Current.EstimatedAverageLordPartySpeed * (float)CampaignTime.HoursInDay);
         }
-
         private void AddBehaviorTupleWithScore(PartyThinkParams p, Settlement settlement, float visitingNearbySettlementScore, MobileParty.NavigationType navigationType, bool isFromPort, bool isTargetingPortBetter)
         {
             AIBehaviorData item = new AIBehaviorData(settlement, AiBehavior.GoToSettlement, navigationType, false, isFromPort, isTargetingPortBetter);
@@ -787,19 +802,12 @@ namespace EliteRecruitsInCastles.EliteRecruitsInCastles
             ValueTuple<AIBehaviorData, float> valueTuple = new ValueTuple<AIBehaviorData, float>(item, visitingNearbySettlementScore);
             p.AddBehaviorScore(valueTuple);
         }
-        private bool IsSettlementSuitableForVisitingCondition(MobileParty mobileParty, Settlement settlement)
+        private static bool IsSettlementSuitableForVisitingCondition(MobileParty mobileParty, Settlement settlement)
         {
-            return settlement.Party.MapEvent == null && (settlement.Party.SiegeEvent == null || (!settlement.Party.SiegeEvent.IsBlockadeActive && mobileParty.HasNavalNavigationCapability)) && (!mobileParty.Party.Owner.MapFaction.IsAtWarWith(settlement.MapFaction) || (mobileParty.Party.Owner.MapFaction.IsMinorFaction && settlement.IsVillage)) && (settlement.IsVillage || settlement.IsFortification) && (!settlement.IsVillage || settlement.Village.VillageState == Village.VillageStates.Normal);
+            return settlement.Party.MapEvent == null && (settlement.Party.SiegeEvent == null || (!settlement.Party.SiegeEvent.IsBlockadeActive && mobileParty.HasNavalNavigationCapability)) && (!mobileParty.Party.Owner.MapFaction.IsAtWarWith(settlement.MapFaction) || ((mobileParty.Party.Owner.MapFaction.IsMinorFaction || mobileParty.MapFaction.Settlements.Count == 0) && settlement.IsVillage)) && (settlement.IsVillage || settlement.IsFortification) && (!settlement.IsVillage || settlement.Village.VillageState == Village.VillageStates.Normal);
         }
-
-        new public const float GoodEnoughScore = 8f;
-
-        new public const float MeaningfulScoreThreshold = 0.025f;
-
-        new public const float BaseVisitScore = 1.6f;
-
         private const float DefaultMoneyLimitForRecruiting = 2000f;
-
+        private SortedDictionary<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>> _settlementsWithDistances = new SortedDictionary<ValueTuple<float, int>, ValueTuple<Settlement, MobileParty.NavigationType, bool, bool>>();
         private IDisbandPartyCampaignBehavior _disbandPartyCampaignBehavior;
     }
 }

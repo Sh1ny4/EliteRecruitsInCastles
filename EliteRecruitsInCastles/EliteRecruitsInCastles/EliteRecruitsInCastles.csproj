@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EliteRecruitsInCastles\AiVisitSettlementBehaviorPatch.cs" />
+    <Compile Include="EliteRecruitsInCastles\CanHaveCampaignIssuePatch.cs" />
     <Compile Include="EliteRecruitsInCastles\CastleRecruitMenu.cs" />
     <Compile Include="EliteRecruitsInCastles\GetBasicVolunteerPatch.cs" />
     <Compile Include="EliteRecruitsInCastles\GetTargetNotableCountForSettlementPatch.cs" />
