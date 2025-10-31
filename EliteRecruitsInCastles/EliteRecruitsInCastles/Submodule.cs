@@ -20,7 +20,7 @@ namespace EliteRecruitsInCastles
             {
                 CampaignGameStarter campaignGameStarter = starterObject as CampaignGameStarter;
                 campaignGameStarter.AddBehavior(new CastleRecruitMenu());
-                campaignGameStarter.AddBehavior(new AiVisitSettlementBehaviorPatch());
+//                campaignGameStarter.AddBehavior(new AiVisitSettlementBehaviorPatch());
             }
         }
     }
