@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using TaleWorlds.CampaignSystem;
 
-namespace EliteRecruitsInCastles.EliteRecruitsInCastles
+namespace EliteRecruitsInCastles.patches
 {
     [HarmonyPatch(typeof(Hero), nameof(Hero.CanHaveCampaignIssues))]
     internal class CanHaveCampaignIssuePatch

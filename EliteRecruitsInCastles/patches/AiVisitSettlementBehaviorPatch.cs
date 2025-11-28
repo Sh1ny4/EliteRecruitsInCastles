@@ -13,7 +13,7 @@ using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Library;
 using TaleWorlds.LinQuick;
 
-namespace EliteRecruitsInCastles.EliteRecruitsInCastles
+namespace EliteRecruitsInCastles.patches
 {
     [HarmonyPatch(typeof(AiVisitSettlementBehavior), "AiHourlyTick")]
     internal class AiVisitSettlementBehaviorPatch : AiVisitSettlementBehavior

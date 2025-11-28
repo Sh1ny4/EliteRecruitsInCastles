@@ -2,7 +2,7 @@
 using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameMenus;
 
-namespace EliteRecruitsInCastles.EliteRecruitsInCastles
+namespace EliteRecruitsInCastles.patches
 {
     internal class CastleRecruitMenu : CampaignBehaviorBase
     {

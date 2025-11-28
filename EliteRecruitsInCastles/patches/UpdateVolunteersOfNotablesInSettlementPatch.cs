@@ -5,7 +5,7 @@ using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 
-namespace EliteRecruitsInCastles.EliteRecruitsInCastles
+namespace EliteRecruitsInCastles.patches
 {
     [HarmonyPatch(typeof(RecruitmentCampaignBehavior), "UpdateVolunteersOfNotablesInSettlement")]
     public class UpdateVolunteersOfNotablesInSettlementPatch

@@ -2,7 +2,7 @@
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.CampaignSystem;
-using EliteRecruitsInCastles.EliteRecruitsInCastles;
+using EliteRecruitsInCastles.patches;
 
 namespace EliteRecruitsInCastles
 {

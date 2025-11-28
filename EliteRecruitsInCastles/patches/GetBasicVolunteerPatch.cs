@@ -3,7 +3,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.GameComponents;
 using TaleWorlds.Core;
 
-namespace EliteRecruitsInCastles.EliteRecruitsInCastles
+namespace EliteRecruitsInCastles.patches
 {
     [HarmonyPatch(typeof(DefaultVolunteerModel), nameof(DefaultVolunteerModel.GetBasicVolunteer))]
     public class GetBasicVolunteerPatch

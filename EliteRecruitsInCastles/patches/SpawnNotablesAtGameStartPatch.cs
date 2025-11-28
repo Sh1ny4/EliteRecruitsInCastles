@@ -3,7 +3,7 @@ using TaleWorlds.CampaignSystem;
 using TaleWorlds.CampaignSystem.CampaignBehaviors;
 using TaleWorlds.CampaignSystem.Settlements;
 
-namespace EliteRecruitsInCastles.EliteRecruitsInCastles
+namespace EliteRecruitsInCastles.patches
 {
     [HarmonyPatch(typeof(NotablesCampaignBehavior), "SpawnNotablesAtGameStart")]
     public class SpawnNotablesAtGameStartPatch
