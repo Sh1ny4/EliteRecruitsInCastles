@@ -6,7 +6,7 @@ using EliteRecruitsInCastles.patches;
 
 namespace EliteRecruitsInCastles
 {
-    public class Submodule : MBSubModuleBase
+    public class SubModule : MBSubModuleBase
     {
         protected override void OnSubModuleLoad()
         {
