@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="patches\AddGameMenuPatch.cs" />
-    <Compile Include="patches\AiVisitSettlementBehaviorPatch.cs" />
+    <Compile Include="patches\AIHourlyTickTranspiler.cs" />
     <Compile Include="patches\CanHaveCampaignIssuePatch.cs" />
     <Compile Include="patches\GetBasicVolunteerPatch.cs" />
     <Compile Include="patches\GetTargetNotableCountForSettlementPatch.cs" />
