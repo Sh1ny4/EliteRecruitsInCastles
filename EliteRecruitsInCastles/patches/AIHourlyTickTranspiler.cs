@@ -10,6 +10,7 @@ namespace EliteRecruitsInCastles.patches
     [HarmonyPatch(typeof(AiVisitSettlementBehavior), "AiHourlyTick")]
     public class AIHourlyTickTranspiler
     {
+        // this transpiler remove the iscastle check from if (!settlement.IsCastle && item < 1f && mobileParty.GetAvailableWageBudget() > 0) to allow the AI to refcruit in the castles
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             var GetIsCastle = AccessTools.Method(typeof(Settlement), "get_IsCastle");
@@ -29,6 +30,7 @@ namespace EliteRecruitsInCastles.patches
                 }
                 yield return instruction[i];
             }
+            // the commented code bellow has the same effect
             /*
             var instruction = new List<CodeInstruction>(instructions);
             if (instruction[570].opcode == OpCodes.Ldloc_S && instruction[571].opcode == OpCodes.Callvirt && instruction[572].opcode == OpCodes.Brtrue)

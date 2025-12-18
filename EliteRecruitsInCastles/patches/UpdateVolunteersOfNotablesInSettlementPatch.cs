@@ -10,6 +10,7 @@ namespace EliteRecruitsInCastles.patches
     [HarmonyPatch(typeof(RecruitmentCampaignBehavior), "UpdateVolunteersOfNotablesInSettlement")]
     public class UpdateVolunteersOfNotablesInSettlementPatch
     {
+        //recruits have a spawn rate in castles
         [HarmonyPostfix]
         static void Postfix(Settlement settlement)
         {

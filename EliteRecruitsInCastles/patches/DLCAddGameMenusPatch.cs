@@ -7,6 +7,7 @@ namespace EliteRecruitsInCastles.patches
     [HarmonyPatch(typeof(NavalTransitionCampaignBehavior), "AddGameMenus")]
     internal class DLCAddGameMenusPatch
     {
+        //will implement later, file is excluded in project
         [HarmonyPostfix]
         public static void Postfix(CampaignGameStarter campaignGameStarter)
         {

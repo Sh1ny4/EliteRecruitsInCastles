@@ -9,6 +9,7 @@ namespace EliteRecruitsInCastles.patches
     public class GetTargetNotableCountForSettlementPatch
     {
         [HarmonyPostfix]
+        //1 headman and 2 rural notables in castles
         static void Postfix(ref int __result, Settlement settlement, Occupation occupation)
         {
             if (settlement.IsCastle)

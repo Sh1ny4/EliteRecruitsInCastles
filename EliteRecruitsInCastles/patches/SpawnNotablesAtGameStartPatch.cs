@@ -8,6 +8,7 @@ namespace EliteRecruitsInCastles.patches
     [HarmonyPatch(typeof(NotablesCampaignBehavior), "SpawnNotablesAtGameStart")]
     public class SpawnNotablesAtGameStartPatch
     {
+        // adds notables to castles 
         [HarmonyPostfix]
         static void Postfix()
         {

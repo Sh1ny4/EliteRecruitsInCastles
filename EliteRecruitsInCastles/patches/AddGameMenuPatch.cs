@@ -8,6 +8,7 @@ namespace EliteRecruitsInCastles.patches
     [HarmonyPatch(typeof(PlayerTownVisitCampaignBehavior), "AddGameMenus")]
     internal class AddGameMenuPatch
     {
+        // patch to add the recruitement menu in the castles
         [HarmonyPostfix]
         public static void Postfix(ref CampaignGameStarter campaignGameSystemStarter)
         {
