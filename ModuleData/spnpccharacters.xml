@@ -226,6 +226,65 @@
         </Equipments>
     </NPCCharacter>
 
+	<NPCCharacter id="nord_town_recruit"
+		default_group="Infantry"
+		level="6"
+		name="Nord Town Recruit"
+		occupation="Soldier"
+		is_basic_troop="true"
+		culture="Culture.nord">
+		<face>
+			<face_key_template value="BodyProperty.fighter_nord" />
+		</face>
+		<Traits>
+			<Trait id="NavalSoldier" value="1" />
+		</Traits>
+		<skills>
+			<skill id="Athletics" value="20" />
+			<skill id="Riding" value="5" />
+			<skill id="OneHanded" value="20" />
+			<skill id="TwoHanded" value="10" />
+			<skill id="Polearm" value="20" />
+			<skill id="Bow" value="5" />
+			<skill id="Crossbow" value="0" />
+			<skill id="Throwing" value="10" />
+		</skills>
+		<upgrade_targets>
+			<upgrade_target id="NPCCharacter.nord_drengr" />
+			<upgrade_target id="NPCCharacter.nord_huntsman" />
+		</upgrade_targets>
+		<Equipments>
+			<EquipmentRoster>
+				<equipment slot="Item0" id="Item.nord_hatchett_3_t1" />
+				<equipment slot="Item1" id="Item.nord_shield_tier_2_d" />
+				<equipment slot="Body" id="Item.northern_leather_vest" />
+				<equipment slot="Leg" id="Item.northman_raider_boot" />
+			</EquipmentRoster>
+			<EquipmentRoster>
+				<equipment slot="Item0" id="Item.nord_hatchett_3_t1" />
+				<equipment slot="Item1" id="Item.nord_shield_tier_2_d" />
+				<equipment slot="Body" id="Item.northern_leather_vest" />
+				<equipment slot="Leg" id="Item.northman_raider_boot" />
+				<equipment slot="Gloves" id="Item.roughtied_leather_bracers" />
+			</EquipmentRoster>
+			<EquipmentRoster>
+				<equipment slot="Item0" id="Item.naval_one_handed_axe_t1" />
+				<equipment slot="Item1" id="Item.northern_round_shield" />
+				<equipment slot="Body" id="Item.northern_leather_vest" />
+				<equipment slot="Leg" id="Item.nord_casual_boots" />
+			</EquipmentRoster>
+			<EquipmentRoster>
+				<equipment slot="Item0" id="Item.naval_one_handed_axe_t1" />
+				<equipment slot="Item1" id="Item.nord_shield_tier_2_d" />
+				<equipment slot="Body" id="Item.heavy_nordic_tunic" />
+				<equipment slot="Leg" id="Item.nord_casual_boots" />
+				<equipment slot="Cape" id="Item.scarf" />
+			</EquipmentRoster>
+			<EquipmentSet id="nord_troop_civilian_template_t1"
+				civilian="true" />
+		</Equipments>
+	</NPCCharacter>
+
     <NPCCharacter id="sturgia_town_recruit"
         default_group="Infantry"
         level="6"
