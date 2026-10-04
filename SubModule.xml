@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Module>
-	<Name value="EliteRecruitsInCastles"/>
+	<Name value="Elite Recruits In Castles"/>
 	<Id value="EliteRecruitsInCastles"/>
-	<Version value="v1.4.8"/>
+	<Version value="v1.5.3"/>
 	<SingleplayerModule value="true"/>
 	<MultiplayerModule value="false"/>
 	<ModuleType value="Community" />
